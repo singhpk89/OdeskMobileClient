@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/adViewholdre"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#00FF00" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp" >
+
+            <com.tahq.otnx115707.AdView
+                xmlns:ap="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/myAdView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ap:animation="fade"
+                ap:banner_type="inappad"
+                ap:canShowMR="false"
+                ap:placementType="interstitial"
+                ap:test_mode="false" />
+            
+             <com.google.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="MY_AD_UNIT_ID"
+            ads:loadAdOnCreate="true"
+            ads:testDevices="TEST_EMULATOR, TEST_DEVICE_ID" />
+        </RelativeLayout>
+
+       
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/blankview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/adViewholdre"
+        android:background="#00FF00"
+        android:text="Error in loading data\n Please Retry"
+        android:textColor="@android:color/black"
+        android:textSize="22sp" />
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/adViewholdre"
+        android:background="@android:color/transparent" />
+
+</RelativeLayout>
